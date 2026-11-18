@@ -110,6 +110,10 @@
               <i class="fas fa-code-branch"></i>
               <span>View Projects</span>
             </a>
+            <button id="heroResumeBtn" class="btn btn-outline" type="button">
+              <i class="fas fa-file-alt"></i>
+              <span>View Resume</span>
+            </button>
             <a href="https://linkedin.com/in/arshad0632" target="_blank" rel="noopener noreferrer" class="btn btn-linkedin">
               <i class="fab fa-linkedin"></i>
               <span>Connect on LinkedIn</span>
@@ -286,11 +290,7 @@
               </div>
               <div class="spec-row">
                 <span class="spec-label"><i class="fab fa-github"></i> GitHub</span>
-                <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="spec-val">github.com (Arshad)</a>
-              </div>
-              <div class="spec-row">
-                <span class="spec-label"><i class="fas fa-globe"></i> Website</span>
-                <span class="spec-val">mohamedfalih.com</span>
+                <a href="https://github.com/arshad0632" target="_blank" rel="noopener noreferrer" class="spec-val">github.com/arshad0632</a>
               </div>
               <div class="spec-row">
                 <span class="spec-label"><i class="fas fa-map-pin"></i> Location</span>
@@ -1089,11 +1089,14 @@
             </div>
 
             <div class="contact-method-card">
-              <div class="cm-icon"><i class="fas fa-globe"></i></div>
+              <div class="cm-icon"><i class="fab fa-github"></i></div>
               <div class="cm-details">
-                <span class="cm-label">Portfolio & Domain</span>
-                <span class="cm-value">mohamedfalih.com</span>
+                <span class="cm-label">GitHub Profile</span>
+                <a href="https://github.com/arshad0632" target="_blank" rel="noopener noreferrer" class="cm-value">github.com/arshad0632</a>
               </div>
+              <a href="https://github.com/arshad0632" target="_blank" rel="noopener noreferrer" class="ext-btn" title="Open GitHub">
+                <i class="fas fa-external-link-alt"></i>
+              </a>
             </div>
 
             <div class="contact-method-card">
@@ -1202,8 +1205,14 @@
           <h2 id="resumeModalTitle" class="modal-title">Arshad A &mdash; Professional Resume</h2>
         </div>
         <div class="modal-header-actions">
+          <a href="Arshad_A_Resume.pdf" download="Arshad_A_Resume.pdf" class="btn btn-sm btn-primary" title="Download Official PDF Resume">
+            <i class="fas fa-download"></i> <span>Download PDF</span>
+          </a>
+          <a href="Arshad_A_Resume.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline" title="Open PDF in new tab">
+            <i class="fas fa-external-link-alt"></i> <span>Open PDF</span>
+          </a>
           <button id="printResumeBtn" class="btn btn-sm btn-outline" title="Print or Save as PDF">
-            <i class="fas fa-print"></i> Print / Save PDF
+            <i class="fas fa-print"></i> <span>Print</span>
           </button>
           <button class="modal-close-btn" data-close="resumeModal" aria-label="Close Resume Modal">
             <i class="fas fa-times"></i>
@@ -1211,20 +1220,34 @@
         </div>
       </div>
 
+      <!-- View switcher between ATS Formatted Sheet & Original PDF -->
+      <div class="resume-view-bar no-print">
+        <div class="resume-tabs" role="tablist">
+          <button id="tabSheetView" class="resume-tab-btn active" type="button" role="tab" aria-selected="true">
+            <i class="fas fa-file-alt"></i> Formatted Sheet
+          </button>
+          <button id="tabPdfView" class="resume-tab-btn" type="button" role="tab" aria-selected="false">
+            <i class="fas fa-file-pdf"></i> Original PDF
+          </button>
+        </div>
+        <div class="resume-status-hint">
+          <i class="fas fa-check-circle"></i> Official 2026 Resume
+        </div>
+      </div>
+
       <div class="modal-body printable-resume">
-        <!-- Resume Document Layout matching the resume -->
-        <div class="resume-sheet">
+        <!-- View 1: Resume Document Layout matching the resume -->
+        <div id="resumeSheetView" class="resume-sheet">
           <header class="resume-sheet-header">
             <h1 class="r-name">ARSHAD A</h1>
             <div class="r-contact-line">
               <span><i class="fas fa-phone-alt"></i> +91 8098178665</span>
-              <span><i class="fas fa-map-marker-alt"></i> Dharmapuri, Tamil Nadu, India</span>
+              <span><i class="fas fa-map-marker-alt"></i> Dharmapuri , Tamil Nadu, India</span>
             </div>
             <div class="r-links-line">
               <a href="mailto:arshadarshad0632c@gmail.com"><i class="fas fa-envelope"></i> arshadarshad0632c@gmail.com</a>
-              <a href="https://linkedin.com/in/arshad0632" target="_blank"><i class="fab fa-linkedin"></i> linkedin.com/in/arshad0632</a>
-              <a href="https://github.com" target="_blank"><i class="fab fa-github"></i> github.com</a>
-              <span><i class="fas fa-globe"></i> mohamedfalih.com</span>
+              <a href="https://linkedin.com/in/arshad0632" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i> Linkedin.com</a>
+              <a href="https://github.com/arshad0632" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> Github.com</a>
             </div>
           </header>
 
@@ -1277,10 +1300,10 @@
             <h2 class="r-section-heading">ACHIEVEMENTS & CERTIFICATIONS</h2>
             <div class="r-divider"></div>
             <ul class="r-bullets">
-              <li><strong>Data Structures & Algorithms:</strong> Solved 200+ problems across LeetCode | Achieved in a LeetCode Contest Rating of 1473.</li>
-              <li><strong>Google AI Essentials:</strong> covering AI tool usage, productivity workflows, and responsible AI practices.</li>
+              <li><strong>Data Structures & Algorithms:</strong> Solved <strong>200+ problems</strong> across LeetCode Achieved in a LeetCode Contest Rating of <strong>1473</strong>.</li>
+              <li><strong>Google AI Essentials:</strong> covering AI tool usage, productivity workflows, and responsible AI practices</li>
               <li><strong>Google Prompting Essentials:</strong> covering prompt design, data analysis, and advanced prompting techniques for complex tasks.</li>
-              <li><strong>Java Developer Internship Certificate</strong> &mdash; Alfido Tech (2026).</li>
+              <li><strong>Java Developer Internship Certificate &mdash; Alfido Tech (2026)</strong></li>
             </ul>
           </section>
 
@@ -1292,13 +1315,29 @@
               <span class="r-item-date">Expected Apr 2028</span>
             </div>
             <div class="r-item-sub">
-              <span>Karpagam College of Engineering, Coimbatore, India</span>
+              <span><em>Karpagam College of Engineering, Coimbatore, India</em></span>
               <span class="r-item-cgpa">CGPA: <strong>8.1 / 10.00</strong></span>
             </div>
             <p class="r-coursework">
               <strong>Relevant Coursework:</strong> Data Structures, Algorithms, Database Management Systems, OOPS
             </p>
           </section>
+        </div>
+
+        <!-- View 2: Original PDF Viewer Embed -->
+        <div id="resumePdfView" class="resume-pdf-container" style="display: none;">
+          <iframe src="Arshad_A_Resume.pdf" class="resume-pdf-iframe" title="Arshad A Official PDF Resume"></iframe>
+          <div class="resume-pdf-fallback no-print">
+            <p>
+              Preview not displaying in your browser?
+              <a href="Arshad_A_Resume.pdf" download="Arshad_A_Resume.pdf" class="btn btn-sm btn-primary">
+                <i class="fas fa-download"></i> Download Arshad_A_Resume.pdf
+              </a>
+              <a href="Arshad_A_Resume.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline">
+                <i class="fas fa-external-link-alt"></i> Open in New Tab
+              </a>
+            </p>
+          </div>
         </div>
       </div>
     </div>

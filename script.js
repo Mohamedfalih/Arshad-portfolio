@@ -107,6 +107,7 @@ function initTerminal() {
   • <span class="t-cmd">leetcode</span>     : LeetCode stats & rating
   • <span class="t-cmd">experience</span>   : Internship & background
   • <span class="t-cmd">education</span>    : Degree & college details
+  • <span class="t-cmd">resume</span>       : View official resume modal
   • <span class="t-cmd">contact</span>      : Show email & phone info
   • <span class="t-cmd">linkedin</span>     : Open LinkedIn profile
   • <span class="t-cmd">clear</span>        : Clear terminal output`,
@@ -135,6 +136,14 @@ Platforms : Git, GitHub, VS Code, LeetCode (200+), GeeksforGeeks`,
     education: () => `B.E in Electronics and Communication Engineering
 Karpagam College of Engineering, Coimbatore, India
 Expected Apr 2028 &bull; CGPA: 8.1 / 10.00`,
+
+    resume: () => {
+      const modal = document.getElementById('resumeModal');
+      if (modal && typeof openModal === 'function') {
+        openModal(modal);
+      }
+      return '✓ Opening Arshad A &mdash; Official Resume...';
+    },
 
     contact: () => `Email    : arshadarshad0632c@gmail.com
 Phone    : +91 8098178665
@@ -260,13 +269,44 @@ function initModals() {
   const linkedInModal = document.getElementById('linkedInModal');
 
   const openResumeBtn = document.getElementById('openResumeBtn');
+  const heroResumeBtn = document.getElementById('heroResumeBtn');
   const openLinkedInGuideBtn = document.getElementById('openLinkedInGuideBtn');
   const printResumeBtn = document.getElementById('printResumeBtn');
 
   // Open Resume Modal
-  if (openResumeBtn && resumeModal) {
-    openResumeBtn.addEventListener('click', () => {
-      openModal(resumeModal);
+  const handleOpenResume = () => {
+    if (resumeModal) openModal(resumeModal);
+  };
+  if (openResumeBtn) {
+    openResumeBtn.addEventListener('click', handleOpenResume);
+  }
+  if (heroResumeBtn) {
+    heroResumeBtn.addEventListener('click', handleOpenResume);
+  }
+
+  // Resume Modal View Switcher (ATS Formatted Sheet vs Original PDF)
+  const tabSheetView = document.getElementById('tabSheetView');
+  const tabPdfView = document.getElementById('tabPdfView');
+  const resumeSheetView = document.getElementById('resumeSheetView');
+  const resumePdfView = document.getElementById('resumePdfView');
+
+  if (tabSheetView && tabPdfView && resumeSheetView && resumePdfView) {
+    tabSheetView.addEventListener('click', () => {
+      tabSheetView.classList.add('active');
+      tabSheetView.setAttribute('aria-selected', 'true');
+      tabPdfView.classList.remove('active');
+      tabPdfView.setAttribute('aria-selected', 'false');
+      resumeSheetView.style.display = 'block';
+      resumePdfView.style.display = 'none';
+    });
+
+    tabPdfView.addEventListener('click', () => {
+      tabPdfView.classList.add('active');
+      tabPdfView.setAttribute('aria-selected', 'true');
+      tabSheetView.classList.remove('active');
+      tabSheetView.setAttribute('aria-selected', 'false');
+      resumeSheetView.style.display = 'none';
+      resumePdfView.style.display = 'block';
     });
   }
 
@@ -280,6 +320,17 @@ function initModals() {
   // Print Resume
   if (printResumeBtn) {
     printResumeBtn.addEventListener('click', () => {
+      // Ensure Sheet View is visible for high-fidelity printing
+      if (tabSheetView && resumeSheetView && resumePdfView) {
+        tabSheetView.classList.add('active');
+        tabSheetView.setAttribute('aria-selected', 'true');
+        if (tabPdfView) {
+          tabPdfView.classList.remove('active');
+          tabPdfView.setAttribute('aria-selected', 'false');
+        }
+        resumeSheetView.style.display = 'block';
+        resumePdfView.style.display = 'none';
+      }
       window.print();
     });
   }

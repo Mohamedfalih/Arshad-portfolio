@@ -59,7 +59,7 @@ I am actively seeking internship, co-op, and entry-level opportunities in:
 📫 Let’s Connect:
 • Email: arshadarshad0632c@gmail.com
 • Phone: +91 8098178665
-• Portfolio: mohamedfalih.com / github.com/arshad0632
+• GitHub: github.com/arshad0632
 • Open to: Technical discussions, mentorship, and engineering opportunities!
 ```
 

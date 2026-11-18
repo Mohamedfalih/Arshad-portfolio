@@ -26,6 +26,7 @@ d:\Arshad Portfolio/
 ├── index.html            # Main semantic HTML5 portfolio & modal containers
 ├── styles.css            # Complete design system, glassmorphism, responsive styles & print CSS
 ├── script.js             # Interactive terminal, role typer, theme toggle, modals & copy handlers
+├── Arshad_A_Resume.pdf   # Official PDF resume file
 ├── LINKEDIN_PROFILE.md   # Complete LinkedIn profile revamp & recruiter outreach playbook
 └── README.md             # Project documentation and deployment guide
 ```
